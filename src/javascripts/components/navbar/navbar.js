@@ -23,11 +23,8 @@ const navbar = (currentUser) => {
       <li class="nav-item mx-3"  id="boards-link">
         <a class="nav-link" href="#"><i class="far fa-clipboard"></i> Boards</a>
       </li>
-      <li class="nav-item mx-3" id="pins-link">
-        <a class="nav-link" href="#"><i class="fas fa-map-pin"></i> Pins</a>
-      </li>
-      <li class="nav-item mx-3" id="add-pin-link">
-        <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add A Pin</a>
+      <li class="nav-item mx-3" id="add-board-link">
+        <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Add A Board</a>
       </li>
     </ul>
 
