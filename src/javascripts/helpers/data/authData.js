@@ -10,7 +10,7 @@ const checkLoginStatus = () => {
     if (user) {
       const currentUser = userData.setCurrentUser(user);
       navbar.navbar(currentUser);
-      $('#app').html('');
+      $('#app').html('<h1>Boards</h1>');
       // viewHelper.viewListener('cows-link');
     } else {
       auth.loginButton();
