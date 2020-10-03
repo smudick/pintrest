@@ -3,7 +3,7 @@ import 'firebase/auth';
 import userData from './userData';
 import auth from '../../components/auth/auth';
 import navbar from '../../components/navbar/navbar';
-// import viewHelper from '../viewHelpers';
+import viewHelper from '../viewHelpers';
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -11,7 +11,7 @@ const checkLoginStatus = () => {
       const currentUser = userData.setCurrentUser(user);
       navbar.navbar(currentUser);
       $('#app').html('<h1>Boards</h1>');
-      // viewHelper.viewListener('cows-link');
+      viewHelper.viewListener('boards-link');
     } else {
       auth.loginButton();
       $('#nav').html('');

@@ -14,13 +14,13 @@ const navbar = (currentUser) => {
   $('#nav').html(
     `<nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Pinterest</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler"type="button"data-toggle="collapse"data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-      <li class="nav-item mx-3"  id="boards-link">
+      <li class="nav-item mx-3" id="boards-link">
         <a class="nav-link" href="#"><i class="far fa-clipboard"></i> Boards</a>
       </li>
       <li class="nav-item mx-3" id="add-board-link">
