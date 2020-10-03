@@ -1,21 +1,21 @@
-// import boardsView from '../components/views/boardsView';
+import boardsView from '../components/views/boardsView';
 
-// const viewHelper = (id) => {
-//   $('#app').html('');
+const viewHelper = (id) => {
+  $('#app').html('');
 
-//   switch (id) {
-//     case 'boards-link':
-//       return boardsView.boardsView();
-//     default:
-//       return console.warn('nothing clicked');
-//   }
-// };
+  switch (id) {
+    case 'boards-link':
+      return boardsView.boardsView();
+    default:
+      return console.warn('nothing clicked');
+  }
+};
 
-// const viewListener = (view) => {
-//   viewHelper(view);
-//   $('body').on('click', 'li.nav-item', (e) => {
-//     viewHelper(e.currentTarget.id);
-//   });
-// };
+const viewListener = (view) => {
+  viewHelper(view);
+  $('body').on('click', 'li.nav-item', (e) => {
+    viewHelper(e.currentTarget.id);
+  });
+};
 
-// export default { viewListener };
+export default { viewListener };

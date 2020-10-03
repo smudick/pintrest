@@ -21,7 +21,6 @@ const checkIfUserExistsInFirebase = (user) => {
       } else {
         console.warn('User Already Exists');
       }
-      // NOTE FOR STUDENTS
       // Set session storage after we know that user is in DB so that we do not hit the API again during this session. Limit hits to the API.
       window.sessionStorage.setItem('ua', true);
     })
@@ -37,7 +36,6 @@ const setCurrentUser = (userObj) => {
     lastSignInTime: userObj.metadata.lastSignInTime,
   };
 
-  // NOTE FOR STUDENTS
   // If the user is logged in and this is set, we have already checked the API, so if they refresh, we know that they already exist.
   const loggedIn = window.sessionStorage.getItem('ua');
   if (!loggedIn) {
