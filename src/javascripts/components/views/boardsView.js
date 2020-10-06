@@ -1,8 +1,8 @@
 import card from '../cards/boardCards';
 import boardData from '../../helpers/data/boardData';
 
-const boardsView = () => {
-  boardData.getAllBoards().then((response) => {
+const boardsView = (user) => {
+  boardData.getAllBoards(user).then((response) => {
     if (response.length) {
       $('#app').append('<h1>BOARDS</h1>');
       response.forEach((board) => {
