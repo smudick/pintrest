@@ -4,9 +4,9 @@ import pinData from './pinData';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getAllBoards = () => new Promise((resolve, reject) => {
+const getAllBoards = (user) => new Promise((resolve, reject) => {
   axios
-    .get(`${baseUrl}/boards.json`)
+    .get(`${baseUrl}/boards.json?orderBy="userUid"&equalTo="${user}"`)
     .then((response) => {
       const boardsData = response.data;
       const boards = [];
@@ -44,4 +44,15 @@ const deleteBoard = (boardUid) => {
     });
 };
 
-export default { getAllBoards, deleteBoard };
+const addBoard = (data, user) => axios
+  .post(`${baseUrl}/boards.json`, data)
+  .then((response) => {
+    const update = {
+      uid: response.data.name,
+      userUid: user
+    };
+    axios.patch(`${baseUrl}/boards/${response.data.name}.json`, update);
+  })
+  .catch((error) => console.warn(error));
+
+export default { getAllBoards, deleteBoard, addBoard };
