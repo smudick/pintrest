@@ -20,11 +20,11 @@ const pinForm = (user) => {
       <input type="text" class="form-control" id="image-url" placeholder="Enter an image url here">
     </div>
     <div class="form-group">
-    <label for="board">Board</label>
-      <select class="form-control" id="board">
-        <option value="">Select a Board</option>
-      </select>
-  </div>
+      <label for="board">Board</label>
+        <select class="form-control" id="board">
+         <option value="">Select a Board</option>
+       </select>
+    </div>
     <button id="add-pin-btn" type="submit" class="btn btn-info"><i class="fas fa-plus-circle"></i> Add Pin</button>
   </form>
   `);

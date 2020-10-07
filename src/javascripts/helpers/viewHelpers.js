@@ -3,6 +3,7 @@ import addPinsView from '../components/views/addPinsView';
 import boardsView from '../components/views/boardsView';
 import pinsView from '../components/views/pinsView';
 import updateBoardsView from '../components/views/updateBoardsView';
+import updatePinsView from '../components/views/updatePinsView';
 
 const viewHelper = (id, user, arg) => {
   $('#app').html('');
@@ -20,6 +21,8 @@ const viewHelper = (id, user, arg) => {
       return addPinsView.addPinView(user);
     case 'update-board-link':
       return updateBoardsView.updateBoardView(arg);
+    case 'update-pin-link':
+      return updatePinsView.updatePinView(arg);
     default:
       return console.warn('nothing clicked');
   }
@@ -40,6 +43,10 @@ const viewListener = (view, user) => {
   $('body').on('click', '.update-board', (e) => {
     const boardUid = e.currentTarget.id;
     viewHelper('update-board-link', user, boardUid);
+  });
+  $('body').on('click', '.update-pin', (e) => {
+    const pinUid = e.currentTarget.id;
+    viewHelper('update-pin-link', user, pinUid);
   });
 };
 
