@@ -7,6 +7,7 @@ const pinMaker = (pinObject) => {
                     </a>
                    <div class="card-body">
                     <h5 class="card-title">${pinObject.name}</h5>
+                    <a href="#" id="${pinObject.uid}" class="btn btn-success update-pin"><i class="fas fa-edit-alt"></i> Update Pin</a>
                     <a href="#" id="${pinObject.uid}" class="btn btn-danger delete-pin"><i class="fas fa-trash-alt"></i> Delete Pin</a>
                   </div>
                   </div>`;

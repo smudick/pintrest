@@ -20,6 +20,13 @@ const getBoardPins = (boardUid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getSinglePin = (pinUid) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/pins/${pinUid}.json`).then((response) => {
+    const thisPin = response.data;
+    resolve(thisPin);
+  }).catch((error) => reject(error));
+});
+
 const deletePin = (firebaseKey) => axios.delete(`${baseUrl}/pins/${firebaseKey}.json`);
 
 const addPin = (data) => axios
@@ -33,4 +40,6 @@ const addPin = (data) => axios
   })
   .catch((error) => console.warn(error));
 
-export default { getBoardPins, deletePin, addPin };
+export default {
+  getBoardPins, deletePin, addPin, getSinglePin
+};
