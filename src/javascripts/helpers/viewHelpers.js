@@ -22,7 +22,7 @@ const viewHelper = (id, user, arg) => {
     case 'update-board-link':
       return updateBoardsView.updateBoardView(arg);
     case 'update-pin-link':
-      return updatePinsView.updatePinView(arg);
+      return updatePinsView.updatePinView(arg, user);
     default:
       return console.warn('nothing clicked');
   }

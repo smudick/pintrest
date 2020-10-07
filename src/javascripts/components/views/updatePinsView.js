@@ -1,10 +1,10 @@
 import pinData from '../../helpers/data/pinData';
-import form from '../forms/updateBoardForm';
+import form from '../forms/updatePinForm';
 
-const updatePinView = (pinUid) => {
+const updatePinView = (pinUid, user) => {
   $('#app').html('<div id="update-pin-form"></div>');
   pinData.getSinglePin(pinUid).then((response) => {
-    form.updateBoardForm(response);
+    form.updatePinForm(response, user);
   });
 };
 

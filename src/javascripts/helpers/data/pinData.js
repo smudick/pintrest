@@ -40,6 +40,8 @@ const addPin = (data) => axios
   })
   .catch((error) => console.warn(error));
 
+const updatePin = (uid, pinObject) => axios.patch(`${baseUrl}/pins/${uid}.json`, pinObject);
+
 export default {
-  getBoardPins, deletePin, addPin, getSinglePin
+  getBoardPins, deletePin, addPin, getSinglePin, updatePin
 };
