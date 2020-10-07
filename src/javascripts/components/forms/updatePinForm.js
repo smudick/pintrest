@@ -1,8 +1,8 @@
 import boardData from '../../helpers/data/boardData';
 import pinData from '../../helpers/data/pinData';
 
-const updatePinForm = (pinObject) => {
-  $('#update-board-form').html(`
+const updatePinForm = (pinObject, user) => {
+  $('#update-pin-form').html(`
       <h2>Update A Pin</h2>
       <div id="success-message"></div>
       <form>
@@ -22,20 +22,20 @@ const updatePinForm = (pinObject) => {
         <div class="form-group">
         <label for="board">Board</label>
           <select class="form-control" id="board">
-           <option value="${pinObject.boardUid}" >Select a Board</option>
+           <option value="">Select a Board</option>
          </select>
       </div>
         <button id="update-pin-btn" type="submit" class="btn btn-success"><i class="fas fa-plus-circle"></i> Update Pin</button>
       </form>
   `);
 
-  boardData.getAllBoards().then((response) => {
+  boardData.getAllBoards(user).then((response) => {
     response.forEach((item) => {
       $('select').append(`<option value="${item.uid}">${item.name}</option>`);
     });
   });
 
-  $('#add-pin-btn').on('click', (e) => {
+  $('#update-pin-btn').on('click', (e) => {
     e.preventDefault();
 
     const data = {
@@ -52,7 +52,7 @@ const updatePinForm = (pinObject) => {
     } else {
       $('#error-message').html('');
 
-      pinData.addPin(data).then(() => {
+      pinData.updatePin(pinObject.uid, data).then(() => {
         $('#success-message').html(
           '<div class="alert alert-success" role="alert">Your Pin Was Updated!</div>'
         );
