@@ -55,4 +55,12 @@ const addBoard = (data, user) => axios
   })
   .catch((error) => console.warn(error));
 
-export default { getAllBoards, deleteBoard, addBoard };
+const updateBoard = (uid, boardObject) => axios.patch(`${baseUrl}/boards/${uid}.json`, boardObject);
+
+export default {
+  getAllBoards,
+  deleteBoard,
+  addBoard,
+  getSingleBoard,
+  updateBoard
+};
