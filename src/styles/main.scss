@@ -4,16 +4,38 @@
 // @import './views';
 
 body {
-  background-color: rgb(6, 151, 66);
+  background-color: rgb(83, 109, 255);
 }
 
 #app {
   margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: row wrap;
+  display: flex; 
+  justify-content: center;
+  flex-flow: column wrap;
   margin-top: 50px;
   width: 90%;
+}
+
+.title {
+  display: flex;
+  align-self: center;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  margin: 2rem;
+}
+
+.btn {
+  margin: 1rem;
+}
+
+.navbar-nav {
+  align-items: center;
 }
 
 .hide {
